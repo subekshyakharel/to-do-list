@@ -1,9 +1,9 @@
-i
+
 let taskList = []
 
 const handleOnSubmit = (e) =>{
-    e.preventDefault(); 
-    const newForm = new FormData(e.target);
+   
+    const newForm = new FormData(e);
     const task = newForm.get("task");
     const obj = {
         task, 
