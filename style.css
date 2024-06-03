@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+}
+.wrapper{
+background: url('./assets/a.jpg') no-repeat center;
+background-size:cover ;
+min-height: 100vh;
+}
+.to-do{
+background: rgba(255, 255, 255, 0.284);
+}
+.table{
+    --bs-table-bg:transparent ;
+}
+.clearitem{
+    bottom: -53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: underline;
+    font-size: 20px;
+}
+.clearitem:hover{
+    cursor: pointer;
+    color: rgb(110, 6, 18) !important;
+}
+.green{
+    background: green;
+    border: 1px green;
+}
+.green:hover{
+    background: green !important;
+}
