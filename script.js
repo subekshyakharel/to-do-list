@@ -1,6 +1,50 @@
 
 let taskList = []
 
+const dayArr = ["sunday", "Monday", "Tuesday", "Wednesday", "Thusday", "Friday", "Saturday"]
+
+const updateDay = () =>{
+    const date = new Date();
+    const day = date.getDay()
+    document.getElementById("day").innerText = dayArr[day];
+}
+
+
+const timeDisplay = () => {
+    const date = new Date();
+let hr = date.getHours()
+let period = "AM"
+if(hr >= 12){
+    hr = hr- 12;
+    period = "PM"
+}
+if(hr==0){
+    hr = 12;
+}
+
+if(hr< 10){
+    hr = "0" + hr;
+}
+let min = date.getMinutes()
+if(min < 10){
+    min = "0" + min;
+}
+let sec = date.getSeconds()
+if(sec< 10){
+    sec = "0" + sec;
+}
+console.log(hr + ":" + min + ":" + sec)
+    document.querySelector(".time").innerText = hr + ":" + min + ":" + sec + " " + period;
+}
+updateDay()
+timeDisplay()
+
+setInterval(timeDisplay , 1000)
+
+
+
+
+
 const handleOnSubmit = (e) =>{
    
     const newForm = new FormData(e);
@@ -31,6 +75,12 @@ const displayTaskList = () =>{
         </tr>`
     })
     tableList.innerHTML = str;
+}
+
+const handleOnClear = () =>{
+    if(window.confirm("Are you sure you want to delete all the task?"))
+    taskList = [];
+   displayTaskList();
 }
 
 const handleOnDel = (id) =>{

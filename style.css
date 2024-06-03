@@ -17,7 +17,7 @@ background: rgba(255, 255, 255, 0.284);
     --bs-table-bg:transparent ;
 }
 .clearitem{
-    bottom: -53%;
+    top: 520px;
     left: 50%;
     transform: translate(-50%, -50%);
     text-decoration: underline;
